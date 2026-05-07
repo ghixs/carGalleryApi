@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cargallery-api
+    runtime: docker
+    region: oregon
+    plan: free
+    dockerfile: ./CarGallery\ -\ Backend/Dockerfile
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: DATABASE_URL
+        scope: build
+      - key: CORS_ORIGINS
+        scope: build
+    healthCheckPath: /api/Auth/users
