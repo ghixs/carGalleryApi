@@ -70,12 +70,6 @@ const DebugPage: React.FC = () => {
             ❌ No user logged in
           </div>
         )}
-        {user && user.role === 'admin' && (
-          <div style={{ background: '#744210', padding: '15px', borderRadius: '5px', margin: '10px 0' }}>
-            ⚠️ OLD ROLE: "admin" (should be "super-admin")<br/>
-            PROBLEM: You have old user data!
-          </div>
-        )}
         {user && user.role === 'super-admin' && (
           <div style={{ background: '#22543d', padding: '15px', borderRadius: '5px', margin: '10px 0' }}>
             ✅ Role is correct: "super-admin"
@@ -119,7 +113,7 @@ const DebugPage: React.FC = () => {
             <li>Login with: admin / admin</li>
           </ol>
         )}
-        {user && (user.role === 'admin' || !user.hasOwnProperty('galleryId')) && (
+        {user && !user.hasOwnProperty('galleryId') && (
           <ol>
             <li><strong>PROBLEM FOUND: Old user data!</strong></li>
             <li>Click "🗑️ Clear Storage & Logout" button below</li>

@@ -25,7 +25,7 @@ const AdminUsers: React.FC = () => {
     }
   };
 
-  const handleRoleChange = async (userId: number, newRole: 'admin' | 'user') => {
+  const handleRoleChange = async (userId: number, newRole: 'super-admin' | 'gallery-admin' | 'user') => {
     if (!confirm(`Are you sure you want to change this user's role to ${newRole}?`)) {
       return;
     }
@@ -102,7 +102,7 @@ const AdminUsers: React.FC = () => {
                 </td>
                 <td>
                   <span className={`role-badge ${user.role}`}>
-                    {user.role === 'admin' ? '👑 Admin' : '👤 User'}
+                    {user.role === 'super-admin' ? '👑 Super Admin' : user.role === 'gallery-admin' ? '🏢 Gallery Admin' : '👤 User'}
                   </span>
                 </td>
                 <td>
@@ -115,10 +115,10 @@ const AdminUsers: React.FC = () => {
                     {user.role === 'user' ? (
                       <button
                         className="success"
-                        onClick={() => handleRoleChange(user.id, 'admin')}
+                        onClick={() => handleRoleChange(user.id, 'super-admin')}
                         disabled={currentUser?.id === user.id}
                       >
-                        Make Admin
+                        Make Super Admin
                       </button>
                     ) : (
                       <button

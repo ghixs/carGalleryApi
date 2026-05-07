@@ -10,7 +10,6 @@ import AdminCars from './pages/AdminCars';
 import AdminBrands from './pages/AdminBrands';
 import AdminUsers from './pages/AdminUsers';
 import AdminGalleries from './pages/AdminGalleries';
-import DebugPage from './pages/DebugPage';
 import './styles/global.css';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

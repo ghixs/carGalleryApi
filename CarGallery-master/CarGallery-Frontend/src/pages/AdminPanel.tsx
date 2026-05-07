@@ -12,7 +12,7 @@ const AdminPanel: React.FC = () => {
     navigate('/login');
   };
 
-  if (user?.role !== 'admin' && user?.role !== 'super-admin' && user?.role !== 'gallery-admin') {
+  if (user?.role !== 'super-admin' && user?.role !== 'gallery-admin') {
     return (
       <div className="access-denied">
         <h1>🚫 Access Denied</h1>
