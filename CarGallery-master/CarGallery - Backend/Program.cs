@@ -55,7 +55,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles(); // Statik dosya desteği
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsProduction())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseCors("AllowFrontend");
 
