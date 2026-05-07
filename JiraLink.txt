@@ -1,0 +1,2 @@
+
+JIRA: https://byalcnkaya0.atlassian.net/jira/software/projects/SCRUM/boards/1?jql=assignee+IN+%28712020%3A52d7205a-7040-4e42-9cd9-3f25be1fd376%2C+empty%2C+712020%3Aeb1f6637-a4c9-401e-a48e-d372d56019f0%2C+712020%3A12b156da-8272-461e-ba8a-b52b901dc57f%2C+712020%3Adde33c15-1947-4c05-a4e5-7c55440cc1a7%2C+712020%3Abe50771e-8fc0-4f70-be39-3080424705ce%29&atlOrigin=eyJpIjoiZThlNWIzMWY3ZmMxNDcxNmE3Y2Y3MzgxOTg5NzIwZWYiLCJwIjoiaiJ9
