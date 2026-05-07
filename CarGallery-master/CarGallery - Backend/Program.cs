@@ -1,13 +1,24 @@
 using CarGallery.Data;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<CarGalleryContext>(options =>
-options.UseSqlite(
-    builder.Configuration.GetConnectionString("Default")
-    ));
+var connectionString = builder.Configuration.GetConnectionString("Default");
+var environment = builder.Environment.EnvironmentName;
+
+if (environment == "Production")
+{
+    connectionString = builder.Configuration["DATABASE_URL"];
+    builder.Services.AddDbContext<CarGalleryContext>(options =>
+        options.UseNpgsql(connectionString));
+}
+else
+{
+    builder.Services.AddDbContext<CarGalleryContext>(options =>
+        options.UseSqlite(connectionString));
+}
 
 
 
@@ -21,10 +32,13 @@ builder.Services.AddSwaggerGen();
 // Add CORS
 builder.Services.AddCors(options =>
 {
+    var allowedOrigins = builder.Configuration.GetSection("CORS_ORIGINS").Get<string>() 
+        ?? "http://localhost:3000";
+    
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000")
+            policy.WithOrigins(allowedOrigins.Split(","))
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
