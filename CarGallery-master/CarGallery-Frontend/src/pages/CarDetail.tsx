@@ -143,7 +143,7 @@ const CarDetail: React.FC = () => {
               <img
                 src={currentImages[selectedImageIndex].startsWith('http') 
                   ? currentImages[selectedImageIndex] 
-                  : `http://localhost:5000${currentImages[selectedImageIndex]}`}
+                  : `http://cargalleryapi-gaou.render.com${currentImages[selectedImageIndex]}`}
                 alt={`${car.brandName} ${car.model}`}
               />
               
@@ -220,7 +220,7 @@ const CarDetail: React.FC = () => {
               <div className="detail-gallery-badge">
                 {car.galleryLogoUrl ? (
                   <img 
-                    src={car.galleryLogoUrl.startsWith('http') ? car.galleryLogoUrl : `http://localhost:5000${car.galleryLogoUrl}`}
+                    src={car.galleryLogoUrl.startsWith('http') ? car.galleryLogoUrl : `http://cargalleryapi-gaou.render.com${car.galleryLogoUrl}`}
                     alt={car.galleryName}
                     className="detail-gallery-logo"
                   />

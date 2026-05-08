@@ -356,7 +356,7 @@ const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
               {formData.imageUrl && (
                 <div style={{ marginTop: '10px' }}>
                   <img
-                    src={formData.imageUrl.startsWith('http') ? formData.imageUrl : `http://localhost:5000${formData.imageUrl}`}
+                    src={formData.imageUrl.startsWith('http') ? formData.imageUrl : `http://cargalleryapi-gaou.render.com${formData.imageUrl}`}
                     alt="Preview"
                     style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px' }}
                   />

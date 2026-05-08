@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Gallery, AddGalleryDto, UpdateGalleryDto, AssignGalleryAdminDto } from '../types';
 
-const API_URL = 'http://localhost:5000/api/Gallery';
+const API_URL = 'http://cargalleryapi-gaou.render.com/api/Gallery';
 
 export const galleryService = {
   getAll: async (): Promise<Gallery[]> => {

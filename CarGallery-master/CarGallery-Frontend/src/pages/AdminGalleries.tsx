@@ -36,7 +36,7 @@ const AdminGalleries: React.FC = () => {
     try {
       const [galleriesData, usersData] = await Promise.all([
         galleryService.getAll(),
-        axios.get<User[]>('http://localhost:5000/api/Auth/users').then(res => res.data),
+        axios.get<User[]>('http://cargalleryapi-gaou.render.com/api/Auth/users').then(res => res.data),
       ]);
       setGalleries(galleriesData);
       setUsers(usersData);
@@ -277,7 +277,7 @@ const AdminGalleries: React.FC = () => {
               {formData.logoUrl && (
                 <div style={{ marginTop: '10px' }}>
                   <img
-                    src={formData.logoUrl.startsWith('http') ? formData.logoUrl : `http://localhost:5000${formData.logoUrl}`}
+                    src={formData.logoUrl.startsWith('http') ? formData.logoUrl : `http://cargalleryapi-gaou.render.com${formData.logoUrl}`}
                     alt="Logo Preview"
                     style={{ width: '200px', height: '200px', objectFit: 'contain', borderRadius: '8px' }}
                   />
@@ -370,7 +370,7 @@ const AdminGalleries: React.FC = () => {
                 <td>
                   {gallery.logoUrl && (
                     <img
-                      src={gallery.logoUrl.startsWith('http') ? gallery.logoUrl : `http://localhost:5000${gallery.logoUrl}`}
+                      src={gallery.logoUrl.startsWith('http') ? gallery.logoUrl : `http://cargalleryapi-gaou.render.com${gallery.logoUrl}`}
                       alt={gallery.name}
                       style={{ width: '50px', height: '50px', objectFit: 'contain' }}
                     />

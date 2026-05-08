@@ -181,7 +181,7 @@ const Catalog: React.FC = () => {
                 <div className="car-image">
                   {car.imageUrl ? (
                     <img 
-                      src={car.imageUrl.startsWith('http') ? car.imageUrl : `http://localhost:5000${car.imageUrl}`} 
+                      src={car.imageUrl.startsWith('http') ? car.imageUrl : `http://cargalleryapi-gaou.render.com${car.imageUrl}`} 
                       alt={`${car.brandName} ${car.model}`} 
                     />
                   ) : (
@@ -196,7 +196,7 @@ const Catalog: React.FC = () => {
                     <div className="car-gallery-badge">
                       {car.galleryLogoUrl ? (
                         <img 
-                          src={car.galleryLogoUrl.startsWith('http') ? car.galleryLogoUrl : `http://localhost:5000${car.galleryLogoUrl}`}
+                          src={car.galleryLogoUrl.startsWith('http') ? car.galleryLogoUrl : `http://cargalleryapi-gaou.render.com${car.galleryLogoUrl}`}
                           alt={car.galleryName}
                           className="gallery-logo"
                         />

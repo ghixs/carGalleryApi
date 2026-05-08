@@ -8,8 +8,4 @@ services:
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-      - key: DATABASE_URL
-        scope: build
-      - key: CORS_ORIGINS
-        scope: build
     healthCheckPath: /api/Auth/users
